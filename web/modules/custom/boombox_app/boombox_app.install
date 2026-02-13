@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Install file for the Boombox App module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function boombox_app_install(): void {
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('page.front', '/boombox')
+    ->save();
+}

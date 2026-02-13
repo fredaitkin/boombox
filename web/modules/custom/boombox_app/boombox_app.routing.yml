@@ -1,0 +1,23 @@
+boombox_app.home:
+  path: '/boombox'
+  defaults:
+    _controller: '\Drupal\boombox_app\Controller\BoomboxController::home'
+    _title: 'Boombox'
+  requirements:
+    _permission: 'access content'
+
+boombox_app.songs:
+  path: '/songs'
+  defaults:
+    _controller: '\Drupal\boombox_app\Controller\BoomboxController::songs'
+    _title: 'Songs'
+  requirements:
+    _permission: 'access content'
+
+boombox_app.artists:
+  path: '/artists'
+  defaults:
+    _controller: '\Drupal\boombox_app\Controller\BoomboxController::artists'
+    _title: 'Artists'
+  requirements:
+    _permission: 'access content'

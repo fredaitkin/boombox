@@ -1,0 +1,19 @@
+boombox_app.home:
+  title: 'Boombox'
+  description: 'Boombox home page'
+  route_name: boombox_app.home
+  menu_name: main
+
+boombox_app.songs:
+  title: 'Songs'
+  description: 'Songs page'
+  route_name: boombox_app.songs
+  parent: boombox_app.home
+  menu_name: main
+
+boombox_app.artists:
+  title: 'Artists'
+  description: 'Artists page'
+  route_name: boombox_app.artists
+  parent: boombox_app.home
+  menu_name: main

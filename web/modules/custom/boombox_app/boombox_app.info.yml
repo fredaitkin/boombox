@@ -1,0 +1,5 @@
+name: Boombox App
+type: module
+description: Provides a Boombox front page with Songs and Artists pages.
+core_version_requirement: ^10 || ^11
+package: Custom
