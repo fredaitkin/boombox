@@ -28,11 +28,39 @@ class BoomboxController extends ControllerBase {
   }
 
   public function artists(): array {
+    $records = \Drupal::database()
+      ->select('boombox_artist', 'a')
+      ->fields('a', ['id', 'name', 'created'])
+      ->orderBy('a.name', 'ASC')
+      ->execute()
+      ->fetchAll();
+
+    $rows = [];
+    $date_formatter = \Drupal::service('date.formatter');
+    $timezone = \Drupal::config('system.date')->get('timezone.default') ?: date_default_timezone_get();
+    foreach ($records as $record) {
+      $rows[] = [
+        'id' => (int) $record->id,
+        'name' => (string) $record->name,
+        'created' => $date_formatter->format((int) $record->created, 'short', '', $timezone),
+      ];
+    }
+
     return [
       'description' => [
         '#markup' => '<p>Artist listing page.</p>',
       ],
       'add_link' => Link::fromTextAndUrl($this->t('Add Artist'), Url::fromRoute('boombox_artist.add'))->toRenderable(),
+      'artist_table' => [
+        '#type' => 'table',
+        '#header' => [
+          $this->t('ID'),
+          $this->t('Artist'),
+          $this->t('Created'),
+        ],
+        '#rows' => $rows,
+        '#empty' => $this->t('No artists found.'),
+      ],
     ];
   }
 
