@@ -19,6 +19,7 @@
         "drupal/core-composer-scaffold": "^10.0",
         "drupal/core-project-message": "^10.0",
         "drupal/core-recommended": "^10.0",
+        "drupal/view_custom_table": "^2.0",
         "drush/drush": "^13"
     },
     "conflict": {
