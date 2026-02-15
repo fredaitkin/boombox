@@ -1,0 +1,5 @@
+name: Boombox Artist
+type: module
+description: Creates the artist table for Boombox.
+core_version_requirement: ^10 || ^11
+package: Custom

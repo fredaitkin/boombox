@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * @file
+ * Install file for the Boombox Song module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function boombox_song_schema(): array {
+  $schema['boombox_song'] = [
+    'description' => 'Stores songs for the Boombox application.',
+    'fields' => [
+      'id' => [
+        'description' => 'Primary key.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'title' => [
+        'description' => 'Song title.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'artist_id' => [
+        'description' => 'Referenced artist ID from boombox_artist.id.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+      ],
+      'duration_seconds' => [
+        'description' => 'Length of song in seconds.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'created' => [
+        'description' => 'Unix timestamp when the song record was created.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'changed' => [
+        'description' => 'Unix timestamp when the song record was last updated.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'title' => ['title'],
+      'artist_id' => ['artist_id'],
+    ],
+  ];
+
+  return $schema;
+}

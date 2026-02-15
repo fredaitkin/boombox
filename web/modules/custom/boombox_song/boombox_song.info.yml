@@ -1,0 +1,7 @@
+name: Boombox Song
+type: module
+description: Creates the song table for Boombox.
+core_version_requirement: ^10 || ^11
+package: Custom
+dependencies:
+  - boombox_artist:boombox_artist

@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * Install file for the Boombox Artist module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function boombox_artist_schema(): array {
+  $schema['boombox_artist'] = [
+    'description' => 'Stores artists for the Boombox application.',
+    'fields' => [
+      'id' => [
+        'description' => 'Primary key.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'name' => [
+        'description' => 'Artist name.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'created' => [
+        'description' => 'Unix timestamp when the artist record was created.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'changed' => [
+        'description' => 'Unix timestamp when the artist record was last updated.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'name' => ['name'],
+    ],
+  ];
+
+  return $schema;
+}
