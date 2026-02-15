@@ -1,4 +1,5 @@
 /vendor/
+/.vscode/
 /.env
 
 # Ignore all Drupal web root files by default.
