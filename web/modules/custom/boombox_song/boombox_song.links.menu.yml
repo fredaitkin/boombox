@@ -1,0 +1,6 @@
+boombox_song.add:
+  title: 'Add Song'
+  description: 'Create a new song'
+  route_name: boombox_song.add
+  parent: boombox_app.songs
+  menu_name: main

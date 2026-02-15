@@ -23,7 +23,13 @@ class BoomboxController extends ControllerBase {
 
   public function songs(): array {
     return [
-      '#markup' => '<p>Song listing page.</p>',
+      'add_link' => Link::fromTextAndUrl($this->t('Add Song'), Url::fromRoute('boombox_song.add'))->toRenderable(),
+      'song_view' => [
+        '#type' => 'view',
+        '#name' => 'songs',
+        '#display_id' => 'block_1',
+        '#arguments' => [],
+      ],
     ];
   }
 

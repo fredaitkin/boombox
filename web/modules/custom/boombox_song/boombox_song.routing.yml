@@ -1,0 +1,7 @@
+boombox_song.add:
+  path: '/songs/add'
+  defaults:
+    _form: '\Drupal\boombox_song\Form\SongAddForm'
+    _title: 'Add Song'
+  requirements:
+    _permission: 'access content'
