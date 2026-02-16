@@ -19,16 +19,18 @@ class SongAddForm extends FormBase {
       '#maxlength' => 255,
     ];
 
-    $artists = \Drupal::database()
-      ->select('boombox_artist', 'a')
-      ->fields('a', ['id', 'name'])
-      ->orderBy('a.name', 'ASC')
-      ->execute()
-      ->fetchAllKeyed();
+    $artist_ids = \Drupal::entityQuery('boombox_artist')
+      ->accessCheck(FALSE)
+      ->sort('name', 'ASC')
+      ->execute();
+
+    $artists = \Drupal::entityTypeManager()
+      ->getStorage('boombox_artist')
+      ->loadMultiple($artist_ids);
 
     $artist_options = [0 => $this->t('- None -')];
-    foreach ($artists as $id => $name) {
-      $artist_options[(int) $id] = $name;
+    foreach ($artists as $artist) {
+      $artist_options[(int) $artist->id()] = $artist->label();
     }
 
     $form['artist_id'] = [

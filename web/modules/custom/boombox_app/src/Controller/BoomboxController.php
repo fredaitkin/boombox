@@ -33,19 +33,4 @@ class BoomboxController extends ControllerBase {
     ];
   }
 
-  public function artists(): array {
-    return [
-      'description' => [
-        '#markup' => '<p>Artist listing page.</p>',
-      ],
-      'add_link' => Link::fromTextAndUrl($this->t('Add Artist'), Url::fromRoute('boombox_artist.add'))->toRenderable(),
-      'artist_view' => [
-        '#type' => 'view',
-        '#name' => 'artists',
-        '#display_id' => 'block_1',
-        '#arguments' => [],
-      ],
-    ];
-  }
-
 }

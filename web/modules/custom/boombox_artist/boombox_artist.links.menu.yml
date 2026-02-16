@@ -1,6 +1,6 @@
 boombox_artist.add:
   title: 'Add Artist'
   description: 'Create a new artist'
-  route_name: boombox_artist.add
+  route_name: entity.boombox_artist.add_form
   parent: boombox_app.artists
   menu_name: main

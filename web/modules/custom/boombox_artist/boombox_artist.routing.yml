@@ -1,7 +1,0 @@
-boombox_artist.add:
-  path: '/artists/add'
-  defaults:
-    _form: '\Drupal\boombox_artist\Form\ArtistAddForm'
-    _title: 'Add Artist'
-  requirements:
-    _permission: 'access content'

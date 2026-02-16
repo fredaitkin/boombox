@@ -1,0 +1,6 @@
+entity.boombox_artist.add_form:
+  route_name: entity.boombox_artist.add_form
+  title: 'Add artist'
+  appears_on:
+    - entity.boombox_artist.collection
+    - boombox_app.artists
