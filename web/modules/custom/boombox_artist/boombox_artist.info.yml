@@ -1,5 +1,5 @@
 name: Boombox Artist
 type: module
-description: Creates the artist table for Boombox.
+description: Provides the Artist content entity for Boombox.
 core_version_requirement: ^10 || ^11
 package: Custom

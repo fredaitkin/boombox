@@ -17,7 +17,7 @@ boombox_app.songs:
 boombox_app.artists:
   path: '/artists'
   defaults:
-    _controller: '\Drupal\boombox_app\Controller\BoomboxController::artists'
+    _entity_list: 'boombox_artist'
     _title: 'Artists'
   requirements:
     _permission: 'access content'

@@ -14,6 +14,6 @@ boombox_app.songs:
 boombox_app.artists:
   title: 'Artists'
   description: 'Artists page'
-  route_name: boombox_app.artists
+  route_name: entity.boombox_artist.collection
   parent: boombox_app.home
   menu_name: main
